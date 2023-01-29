@@ -1,7 +1,7 @@
 class Telephone{
     constructor(){
-        this.observer = new set();
-        this.phonecaller = new set();
+        this.observers = new Set();
+        this.phonecaller = new Set();
     }
 
     addphonenumber(phonenumber){
