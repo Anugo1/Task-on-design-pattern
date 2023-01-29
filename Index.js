@@ -5,7 +5,7 @@ class Telephone{
     }
 
     addphonenumber(phonenumber){
-        this.addphonenumber.add(number);
+        this.addphonenumber.add(phonenumber);
     }
 
     removephonemumber(phonenumber){
@@ -13,7 +13,9 @@ class Telephone{
     }
 
     dailphonemumber(phonenumber){
-        this.dailphonemumber.notify(phonenumber);
+        if (this.phonebook.has(phonenumber)) {
+            this.notify(`${phonenumber} is dailing ............`)
+        }
     }
 
 
@@ -25,7 +27,7 @@ class Telephone{
         this.observers.delete(observer)
     }
 
-    notify(contact){
+    notify(context){
         for (let observer of this.observers){
             observer.update(context)
         }
@@ -34,8 +36,8 @@ class Telephone{
 
 
 class observer {
-   constructor(){
-   
+   constructor(name){
+   this.name = name 
    } 
 
    update(){
@@ -44,3 +46,12 @@ class observer {
 }
 
 
+const telephone = new Telephone();
+
+// Two observers:
+const Anugo = new observer()
+const mike = new observer()
+
+
+
+telephone.addphonenumber()
