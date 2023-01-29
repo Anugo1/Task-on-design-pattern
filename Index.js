@@ -1,20 +1,22 @@
 class Telephone{
     constructor(){
-        this.observers = new set();
-        this.phonebook = new set();
+        this.observer = new set();
+        this.phonecaller = new set();
     }
 
     addphonenumber(phonenumber){
-        this.addphonenumber.add(phonenumber);
+        this.phonecaller.add(phonenumber);
     }
 
     removephonemumber(phonenumber){
-        this.removephonemumber.delete(phonenumber);
+        this.phonecaller.delete(phonenumber);
     }
 
     dailphonemumber(phonenumber){
-        if (this.phonebook.has(phonenumber)) {
-            this.notify(`${phonenumber} is dailing ............`)
+        if (this.phonecaller.has(phonenumber)) {
+            this.notify(`${phonenumber} is dailing ............`);
+        }else{
+            this.notify(`${phonenumber} is not found ,try again later`)
         }
     }
 
@@ -40,18 +42,25 @@ class observer {
    this.name = name 
    } 
 
-   update(){
-
+   update(context){
+    console.log(`${this.name}: ${context}`)
    }
 }
 
 
+
+//initializing:
 const telephone = new Telephone();
 
-// Two observers:
-const Anugo = new observer()
-const mike = new observer()
+// Two observers to be added to the observer class:
+const Anugo = new observer('Anugo');
+const mike = new observer('Mike');
 
 
 
-telephone.addphonenumber()
+telephone.addphonenumber(23407023232)
+
+telephone.dailphonemumber(23407023232)
+
+telephone.addObserver(Anugo)
+telephone.addObserver(mike)
