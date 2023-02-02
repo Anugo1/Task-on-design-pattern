@@ -1,7 +1,7 @@
 class Telephone{
     constructor(){
-        this.observer = new set();
-        this.phonecaller = new set();
+        this.observers = new Set();
+        this.phonecaller = new Set();
     }
 
     addphonenumber(phonenumber){
@@ -14,9 +14,9 @@ class Telephone{
 
     dailphonemumber(phonenumber){
         if (this.phonecaller.has(phonenumber)) {
-            this.notify(`${phonenumber} is dailing ............`);
+            this.notify(`${phonenumber} is dailing ............\n`);
         }else{
-            this.notify(`${phonenumber} is not found ,try again later`)
+            this.notify(`${phonenumber} is not found ,try again later\n`)
         }
     }
 
@@ -56,11 +56,14 @@ const telephone = new Telephone();
 const Anugo = new observer('Anugo');
 const mike = new observer('Mike');
 
+let myNumber = 23407023232
+let dey_play = 2340904532
 
+telephone.addphonenumber(myNumber)
 
-telephone.addphonenumber(23407023232)
+telephone.add(Anugo)
+telephone.dailphonemumber(myNumber)
 
-telephone.dailphonemumber(23407023232)
+telephone.add(mike)
 
-telephone.addObserver(Anugo)
-telephone.addObserver(mike)
+telephone.dailphonemumber(dey_play)
