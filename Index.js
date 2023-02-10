@@ -54,7 +54,7 @@ const telephone = new Telephone();
 
 // Two observers to be added to the observer class:
 const Anugo = new observer('Anugo');
-const mike = new observer('Mike');
+const mike = new observer('mike');
 
 let myNumber = 23407023232
 let dey_play = 2340904532
