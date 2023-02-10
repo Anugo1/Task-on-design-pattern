@@ -66,4 +66,9 @@ telephone.dailphonemumber(myNumber)
 
 telephone.add(mike)
 
+<<<<<<< HEAD
 telephone.dailphonemumber(dey_play)
+=======
+telephone.addObserver(Anugo)
+telephone.addObserver(mike)
+>>>>>>> 2c978273ad31e2ccac4853755c933fe14b6ab8ad
