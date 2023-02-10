@@ -8,11 +8,11 @@ class Telephone{
         this.phonecaller.add(phonenumber);
     }
 
-    removephonemumber(phonenumber){
+    removephonenumber(phonenumber){
         this.phonecaller.delete(phonenumber);
     }
 
-    dailphonemumber(phonenumber){
+    dailphonenumber(phonenumber){
         if (this.phonecaller.has(phonenumber)) {
             this.notify(`${phonenumber} is dailing ............\n`);
         }else{
@@ -62,6 +62,9 @@ let dey_play = 2340904532
 telephone.addphonenumber(myNumber)
 
 telephone.add(Anugo)
-telephone.dailphonemumber(myNumber)
-
 telephone.add(mike)
+
+telephone.dailphonenumber(myNumber)
+telephone.dailphonenumber(dey_play)
+
+
